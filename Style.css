@@ -1,0 +1,142 @@
+:root {
+  --bcgc-primary: hsl(158, 36%, 37%);
+  --bcgc-primary-500: hsl(158, 36%, 20%);
+  --bcgc-secondary: hsl(30, 38%, 92%);
+
+  --clr--neutral-900: hsl(212, 21%, 14%);
+  --clr--neutral-400: hsl(228, 12%, 48%);
+  --clr--neutral-100: hsl(0, 0%, 100%);
+
+  --ff-accent:"Fraunces", serif;
+
+  --fw-regular:500;
+  --fw-bold:700;
+}
+
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+h1, h2, h3 {
+  line-height: 1;
+}
+
+/* general style */
+body {
+  font-family: var(--ff-accent);
+  font-size: 0.875rem;
+  font-weight: var(--fw-regular);
+  color: var(--clr--neutral-400);
+  background-color: var(--bcgc-secondary);
+  /* for this project only */
+  display: grid;
+  place-content: center;
+  margin: 1rem;
+}
+
+.product {
+  display: grid;
+  background-color: var(--clr--neutral-100);
+  border-radius: .5rem;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+@media (min-width:600px) {
+  .product {
+    padding: 2rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.product-content {
+  display: grid;
+  gap: .5rem;
+  padding: 1.5rem;
+}
+.product-category {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+.product-title {
+  color: var(--clr--neutral-900);
+  font-family: var(--ff-accent);
+  font-size: 2rem;
+}
+.flex-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.product-price {
+  font-size: 2rem;
+  color: var(--bcgc-primary);
+}
+button {
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: .75em 1.5em;
+  gap: .75rem;
+  border-radius: .5rem;
+  border: 0;
+  background-color: var(--bcgc-primary);
+  color: var(--clr--neutral-100);
+  font-weight: var(--fw-bold);
+  font-family: var(--ff-accent);
+  font-size: .925rem;
+
+}
+button:where(:hover,:focus) {
+  background-color: var(--bcgc-primary-500);
+}
+button[data-icon="shopping-cart"]::before {
+  content: "";
+  width: 15px;
+  height: 16px;
+  background-image: url(./images/icon-cart.svg);
+}
+/*
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+*/
+
+
